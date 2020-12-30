@@ -19,8 +19,8 @@ export const Wrapper = styled.div`
 
     .artist-image {
       position: relative;
-      width: 40vw;
-      height: 40vw;
+      width: 90vw;
+      height: 35vw;
 
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
         height: 90vw;
