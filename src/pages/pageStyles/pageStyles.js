@@ -163,7 +163,7 @@ export const Wrapper = styled.div`
 export const Artist = styled(Link)`
   display: flex;
   position: relative;
-  width: 22vw;
+  width: 35vw;
   height: 22vw;
   margin: 2vw;
   cursor: pointer;

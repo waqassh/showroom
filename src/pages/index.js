@@ -64,7 +64,7 @@ import { COLORS } from "../constants"
 `);
 
 
-console.log(featuredProducts)
+
   return (
     <Layout>
       <SEO title="Home"/>
