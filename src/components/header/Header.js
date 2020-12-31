@@ -7,10 +7,7 @@ import Menu from './Menu'
 
 const Header = ({ siteTitle }) => {
   const {
-   
     wpcontent: {menuItems},
-    
- 
 } = useStaticQuery(graphql`
   query{
     wpcontent{
