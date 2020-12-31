@@ -87,7 +87,7 @@ import { COLORS } from "../constants"
           <h2>Featured Cars</h2>
           
           <div className="artist-items">
-            {/*featuredProducts.map(({products,slug}) => (
+            {featuredProducts.map(({products,slug}) => (
               <Artist to={'/${slug}'}>
                 <Image 
                 fluid= {products.foto.imageFile.childImageSharp.fluid} 
@@ -95,12 +95,15 @@ import { COLORS } from "../constants"
                 />
                 <div className="artist-info">
                   <p>
-                    {products.merk} {products.naam}
+                    {products.merk}
+                  </p>
+                  <p>
+                     {products.naam}
                   </p>
                   
                 </div>
               </Artist>
-            ))*/}
+            ))}
           </div>
         </div>
       </Wrapper>
