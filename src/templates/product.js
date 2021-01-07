@@ -30,11 +30,11 @@ const ProductTemplate = ({data:
           </div>
           <div className="car-info">
             <h2>{products.merk} {products.naam}</h2>
-            {products.naam ? (
-              <h3><span>{products.naam} -</span> <span>{products.locale}</span></h3>
-            ): (
-            <h3>{products.locale}</h3>
-            )}
+            
+              <h3><span>{products.naam} </span> </h3>
+           
+            
+          
             <p className="description">{products.omschrijving}</p>
             <p className="info">
             <strong>merk:</strong> {products.merk}
@@ -77,7 +77,7 @@ query ($id: ID!) {
           sourceUrl
           imageFile {
             childImageSharp {
-              fluid(quality: 100) {
+              fluid(quality: 50) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

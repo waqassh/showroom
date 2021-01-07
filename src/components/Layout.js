@@ -42,7 +42,17 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        
+        { <footer
+          style={{
+            marginTop: `2rem`,
+            textAlign: "center",
+            fontSize: 20
+          }}
+        >
+          © {new Date().getFullYear()} SHEIKH'S SHOWROOM
+          {` `}
+         
+        </footer> }
       </div>
     </>
   )
