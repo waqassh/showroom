@@ -75,11 +75,11 @@ console.log({featuredProducts})
             <p className="header-title">{title}</p>
             <p className="header-description">{kleineBeschrijving}</p>
           </div>
-          <BottomEdgeDown color={COLORS.BLACK}/>
+          <BottomEdgeDown color={COLORS.SECONDARY}/>
         </div>
         <div className="description">
           <p>{kleineBeschrijving}</p>
-          <BottomEdgeUp color={COLORS.PRIMARY}/>
+          <BottomEdgeUp color={COLORS.BLACK}/>
         </div>
 
 

@@ -6,50 +6,51 @@ import SEO from "../components/Seo"
 import { Wrapper, Image,BottomEdgeDown,BottomEdgeUp,Car} from "../pages/pageStyles/pageStyles"
 import { COLORS } from "../constants"
 
-  const IndexPage = () => {
+const IndexPage = () => {
 
     const {
-      wpcontent: {
-        page: {
-          homeMeta: {
-            title,
-            kleineBeschrijving,
-            foto,
-            featuredProducts,
+        wpcontent: {
+          page: {
+            homeMeta: {
+              title,
+              kleineBeschrijving,
+              foto,
+              featuredProducts,
+            }
           }
         }
-      }
-    } = useStaticQuery(graphql`
-    query{
-      wpcontent{
-      page(id: "home", idType: URI) {
-        homeMeta {
-          title
-          kleineBeschrijving
-          foto {
-            altText
-            sourceUrl
-            imageFile{
-              childImageSharp{
-                fluid(quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
+      } = useStaticQuery(graphql`
+      query{
+        wpcontent{
+        page(id: "home", idType: URI) {
+          homeMeta {
+            title
+            kleineBeschrijving
+            foto {
+              altText
+              sourceUrl
+              imageFile{
+                childImageSharp{
+                  fluid(quality: 100) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
                 }
               }
             }
-          }
-          featuredProducts {
-            ... on WPGraphql_Auto {
-              id
-              products {
-                naam
-                merk
-                foto {
-                  altText
-                  sourceUrl
-                  imageFile{
-                    childImageSharp{
-                      fluid(quality: 100, grayscale: true) {
-                        ...GatsbyImageSharpFluid_withWebp
+            featuredProducts {
+              ... on WPGraphql_Auto {
+                slug
+                products {
+                  naam
+                  merk
+                  foto {
+                    altText
+                    sourceUrl
+                    imageFile{
+                      childImageSharp{
+                        fluid(quality: 100, grayscale: true) {
+                          ...GatsbyImageSharpFluid_withWebp
+                        }
                       }
                     }
                   }
@@ -60,16 +61,13 @@ import { COLORS } from "../constants"
         }
       }
     }
-  }
-`);
-
-
-
-  return (
-    <Layout>
-      <SEO title="Home"/>
-      <Wrapper>
-        <div className="banner">
+  `);
+console.log({featuredProducts})
+    return(
+        <Layout>
+             <SEO title="Home"/>
+             <Wrapper>
+             <div className="banner">
           <Image 
           fluid={foto.imageFile.childImageSharp.fluid} alt={foto.altText}
           />
@@ -83,35 +81,39 @@ import { COLORS } from "../constants"
           <p>{kleineBeschrijving}</p>
           <BottomEdgeUp color={COLORS.PRIMARY}/>
         </div>
+
+
         <div className="cars">
           <h2>Featured Cars</h2>
-          
           <div className="car-items">
-            {featuredProducts.map(({products,slug}) => (
-              <Car to={'/${slug}'}>
-                <Image 
-                fluid= {products.foto.imageFile.childImageSharp.fluid} 
-                altText={products.foto.altText}
-                />
+            {featuredProducts.map(({products, slug}) => (
+              <Car key={slug} to= {`/${slug}`}>
+                <Image fluid={products.foto.imageFile.childImageSharp.fluid} alt={products.foto.altText}/>
                 <div className="car-info">
-                  <p>
+                <p>
                     {products.merk}
                   </p>
                   <p>
                      {products.naam}
                   </p>
-                  
+         
                 </div>
+
               </Car>
             ))}
           </div>
-        </div>
-      </Wrapper>
 
-    </Layout>
-  )
+
+        </div>
+
+
+             </Wrapper>
+
+        </Layout>
+       
+    )
+
 }
-  
 
 
 export default IndexPage

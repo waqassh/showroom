@@ -22,7 +22,7 @@ const ProductTemplate = ({data:
           <div className="car-container">
             <div className="car-image">
             <Image fluid={products.foto.imageFile.childImageSharp.fluid}/>
-          <div className="roles">
+          <div className="make">
             {makemodels.map(({node:makemodel})=> (
               <div className="role">{makemodel.name}</div>
             ))}

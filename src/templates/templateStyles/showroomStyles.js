@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
         border-bottom: solid 15px ${COLORS.PRIMARY};
       }
 
-      .roles {
+      .make {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -36,11 +36,11 @@ export const Wrapper = styled.div`
         flex-direction: column;
         justify-content: space-evenly;
         flex-wrap: wrap;
-        color: ${COLORS.SECONDARY};
+        color: ${COLORS.RED};
         font-family: ${FONT_FAMILIES.TITLE};
         text-transform: uppercase;
         background-color: ${COLORS.GREY};
-        border-right: solid 15px ${COLORS.SECONDARY};
+        border-right: solid 15px ${COLORS.RED};
 
         @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
           color: ${COLORS.PRIMARY};
@@ -95,13 +95,13 @@ export const Wrapper = styled.div`
         }
 
         span:first-child {
-          color: ${COLORS.TERTIARY};
+          color: ${COLORS.purple};
         }
       }
 
       .description {
         font-size: 1.2rem;
-        color: ${COLORS.TERTIARY};
+        color: ${COLORS.WHITE};
 
         @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
           font-size: 1rem;

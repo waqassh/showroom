@@ -64,7 +64,7 @@ export const Wrapper = styled.div`
     position: relative;
     width: 100%;
     padding: 3rem 0 10rem;
-    background-color: ${({ descriptionColor = COLORS.BLACK }) =>
+    background-color: ${({ descriptionColor = COLORS.SECONDARY }) =>
       `${descriptionColor}`};
 
     h2 {
@@ -83,7 +83,7 @@ export const Wrapper = styled.div`
     p {
       width: 70%;
       font-size: 1.3rem;
-      color: ${COLORS.TERTIARY};
+      color: ${COLORS.WHITE};
       text-align: center;
       line-height: 2rem;
       margin: auto;
@@ -109,7 +109,7 @@ export const Wrapper = styled.div`
     div {
       width: 33.33%;
       padding: 1em;
-      color: ${COLORS.TERTIARY};
+      color: ${COLORS.PRIMAR};
 
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
         width: 100%;
@@ -210,7 +210,7 @@ export const Car = styled(Link)`
     }
 
     p:nth-child(2) {
-      color: ${COLORS.SECONDARY};
+      color: ${COLORS.RED};
 
       margin-top: 0.3rem;
     }
@@ -221,7 +221,7 @@ export const BottomEdgeDown = styled.div`
   position: absolute;
   bottom: 0;
   width: 0;
-  border-bottom: 130px solid ${COLORS.TERTIARY};
+  border-bottom: 130px solid ${COLORS.purple};
   border-right: 100vw solid transparent;
 
   &:before {
@@ -237,7 +237,7 @@ export const BottomEdgeUp = styled.div`
   position: absolute;
   bottom: 0;
   width: 0;
-  border-bottom: 140px solid ${COLORS.TERTIARY};
+  border-bottom: 140px solid ${COLORS.purple};
   border-right: 100vw solid transparent;
 
   &:after {
