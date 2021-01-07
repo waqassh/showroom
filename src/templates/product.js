@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql} from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
-import {Wrapper, Image} from './templateStyles/artistStyles'
+import {Wrapper, Image} from './templateStyles/showroomStyles'
 
 
 const ProductTemplate = ({data: 
@@ -19,8 +19,8 @@ const ProductTemplate = ({data:
       <Layout>
         <SEO title="Car"/>
         <Wrapper>
-          <div className="artist-container">
-            <div className="artist-image">
+          <div className="car-container">
+            <div className="car-image">
             <Image fluid={products.foto.imageFile.childImageSharp.fluid}/>
           <div className="roles">
             {makemodels.map(({node:makemodel})=> (
@@ -28,7 +28,7 @@ const ProductTemplate = ({data:
             ))}
           </div>
           </div>
-          <div className="artist-info">
+          <div className="car-info">
             <h2>{products.merk} {products.naam}</h2>
             {products.naam ? (
               <h3><span>{products.naam} -</span> <span>{products.locale}</span></h3>

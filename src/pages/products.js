@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
-import { Wrapper, Image,BottomEdgeDown,BottomEdgeUp,Artist} from "../pages/pageStyles/pageStyles"
+import { Wrapper, Image,BottomEdgeDown,BottomEdgeUp, Car} from "../pages/pageStyles/pageStyles"
 import { COLORS } from "../constants"
 
 const ProductsPage = () => {
@@ -68,7 +68,7 @@ const ProductsPage = () => {
     return (
         <Layout>
             <SEO title="products"/>
-            <Wrapper artistsColor={COLORS.BLACK} descriptionColor={COLORS.SECONDARY}>
+            <Wrapper carsColor={COLORS.BLACK} descriptionColor={COLORS.SECONDARY}>
                 <div className="banner">
                     <Image 
                     fluid={foto.imageFile.childImageSharp.fluid}
@@ -80,21 +80,21 @@ const ProductsPage = () => {
                     <p>{beschrijving}</p>
                     <BottomEdgeUp color={COLORS.BLACK}/>
                 </div>
-                <div className="artists">
+                <div className="cars">
                     <h2>Our Products</h2>
-                    <div className="artist-items">
+                    <div className="car-items">
                         {autos.map(({node: {products, slug} }) => (
-                            <Artist to={`/${slug}`} key={slug}>
+                            <Car to={`/${slug}`} key={slug}>
                                 <Image
                                  fluid={products.foto.imageFile.childImageSharp.fluid}
                                  alt={products.foto.altText}
                                  />
-                               <div className="artist-info">
+                               <div className="car-info">
                                    <p>{products.merk}</p>
                                    {products.naam && <p>{products.naam}</p>}
 
                                </div>
-                            </Artist>
+                            </Car>
                         ))}
                     </div>
                 </div>

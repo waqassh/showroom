@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
-import { Wrapper, Image,BottomEdgeDown,BottomEdgeUp,Artist} from "../pages/pageStyles/pageStyles"
+import { Wrapper, Image,BottomEdgeDown,BottomEdgeUp,Car} from "../pages/pageStyles/pageStyles"
 import { COLORS } from "../constants"
 
 const HomePage = () => {
@@ -83,13 +83,13 @@ console.log({featuredProducts})
         </div>
 
 
-        <div className="artists">
+        <div className="cars">
           <h2>Featured Cars</h2>
-          <div className="artist-items">
+          <div className="car-items">
             {featuredProducts.map(({products, slug}) => (
-              <Artist key={slug} to= {`/${slug}`}>
+              <Car key={slug} to= {`/${slug}`}>
                 <Image fluid={products.foto.imageFile.childImageSharp.fluid} alt={products.foto.altText}/>
-                <div className="artist-info">
+                <div className="car-info">
                 <p>
                     {products.merk}
                   </p>
@@ -99,7 +99,7 @@ console.log({featuredProducts})
          
                 </div>
 
-              </Artist>
+              </Car>
             ))}
           </div>
 
