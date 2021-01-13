@@ -47,6 +47,11 @@ const ProductTemplate = ({data:
             <p className="info">
             <strong>bouwjaar:</strong> {products.bouwjaar}
             </p>
+
+            <p className="info">
+            <strong>Transmissie:</strong> {products.transmissie}
+            </p>
+
           </div>
           </div>
 
@@ -73,6 +78,7 @@ query ($id: ID!) {
         naam
         bouwjaar
         omschrijving
+        transmissie
         foto {
           sourceUrl
           imageFile {

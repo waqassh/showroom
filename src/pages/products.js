@@ -42,6 +42,7 @@ const ProductsPage = () => {
                   naam
                   merk
                   bouwjaar
+                  
                   foto {
                     altText
                     sourceUrl
